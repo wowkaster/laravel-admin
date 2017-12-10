@@ -25,13 +25,6 @@ class LaravelAdminServiceProvider extends ServiceProvider
             __DIR__ . '/../publish/Middleware/' => app_path('Http/Middleware'),
         ]);
 
-        $this->publishes([
-            __DIR__ . '/../publish/migrations/' => database_path('migrations'),
-        ]);
-
-        $this->publishes([
-            __DIR__ . '/../publish/Model/' => app_path(),
-        ]);
 
         $this->publishes([
             __DIR__ . '/../publish/Controllers/' => app_path('Http/Controllers'),
