@@ -62,9 +62,6 @@ class LaravelAdminCommand extends Command
         $routes =
             <<<EOD
 Route::get('admin', 'Admin\\AdminController@index');
-Route::resource('admin/roles', 'Admin\\RolesController');
-Route::resource('admin/permissions', 'Admin\\PermissionsController');
-Route::resource('admin/users', 'Admin\\UsersController');
 Route::get('admin/generator', ['uses' => '\Appzcoder\LaravelAdmin\Controllers\ProcessController@getGenerator']);
 Route::post('admin/generator', ['uses' => '\Appzcoder\LaravelAdmin\Controllers\ProcessController@postGenerator']);
 EOD;
