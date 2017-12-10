@@ -39,12 +39,6 @@ class LaravelAdminCommand extends Command
      */
     public function handle()
     {
-        try {
-            $this->call('migrate');
-        } catch (\Illuminate\Database\QueryException $e) {
-            $this->error($e->getMessage());
-            exit();
-        }
 
         if (\App::VERSION() >= '5.2') {
             $this->info("Generating the authentication scaffolding");
@@ -57,9 +51,6 @@ class LaravelAdminCommand extends Command
 
         $this->info("Dumping the composer autoload");
         (new Process('composer dump-autoload'))->run();
-
-        $this->info("Migrating the database tables into your application");
-        $this->call('migrate');
 
         $this->info("Adding the routes");
 
